@@ -1,0 +1,85 @@
+/* Project Card Styles */
+.project-card {
+  background: #1e293b;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid #334155;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  border-color: rgba(45, 212, 191, 0.5);
+  transform: translateY(-0.5rem);
+  box-shadow: 0 20px 25px -5px rgba(45, 212, 191, 0.1);
+}
+
+.project-card-image {
+  height: 12rem;
+  background: #475569;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 1) 100%);
+  opacity: 0.6;
+}
+
+.project-card-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #334155;
+  color: #64748b;
+}
+
+.project-card-icon i {
+  font-size: 2rem;
+}
+
+.project-card:hover .project-card-icon {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card-content {
+  padding: 1.5rem;
+}
+
+.project-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-card-title {
+  color: #2dd4bf;
+}
+
+.project-card-desc {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.project-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-card-tag {
+  padding: 0.25rem 0.75rem;
+  background: #0f172a;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  border: 1px solid #334155;
+}

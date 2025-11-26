@@ -1,0 +1,90 @@
+/* Contact Section Styles */
+.contact-container {
+  padding: 6rem 0;
+  background: #0f172a;
+  position: relative;
+}
+
+.contact-inner {
+  max-width: 1536px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+  font-size: 1.125rem;
+  color: #94a3b8;
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .contact-methods {
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 9999px;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  background: #334155;
+  border-color: #2dd4bf;
+  color: #2dd4bf;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(45, 212, 191, 0.1);
+}
+
+.contact-link i {
+  font-size: 1.25rem;
+}
+
+/* Footer Styles */
+.footer-container {
+  padding: 2rem 0;
+  background: #020617;
+  border-top: 1px solid #334155;
+  text-align: center;
+}
+
+.footer-text {
+  color: #64748b;
+  font-size: 0.875rem;
+}

@@ -1,0 +1,20 @@
+/* Global App Container */
+*{
+    -ms-overflow-style: none;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #0f172a;
+  overflow-y:none;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+

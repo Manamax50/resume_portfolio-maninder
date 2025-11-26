@@ -1,0 +1,149 @@
+/* Who Am I Section Styles */
+.who-am-i-container {
+  padding: 6rem 0;
+  background: #020617;
+  position: relative;
+}
+
+.who-am-i-inner {
+  max-width: 1536px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.who-am-i-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .who-am-i-layout {
+    flex-direction: row;
+  }
+}
+
+.my-image {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+/* Image Section */
+.who-am-i-image-wrapper {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .who-am-i-image-wrapper {
+    width: 50%;
+  }
+}
+
+.who-am-i-image-border {
+  position: relative;
+  display: flex;
+}
+
+.who-am-i-image-border::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: linear-gradient(135deg, #2dd4bf, #3b82f6);
+  border-radius: 1rem;
+  opacity: 0.25;
+  transition: opacity 1s ease;
+  filter: blur(12px);
+}
+
+.who-am-i-image-border:hover::before {
+  opacity: 0.75;
+}
+
+.who-am-i-image-content {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background: #1e293b;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.who-am-i-image-content i {
+  font-size: 3.75rem;
+  color: #475569;
+}
+
+/* Text Section */
+.who-am-i-text {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .who-am-i-text {
+    width: 50%;
+  }
+}
+
+.who-am-i-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.who-am-i-line {
+  height: 1px;
+  width: 3rem;
+  background: #2dd4bf;
+}
+
+.who-am-i-label-text {
+  color: #2dd4bf;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.who-am-i-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.who-am-i-desc {
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+  line-height: 1.625;
+}
+
+/* Stats Grid */
+.who-am-i-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.who-am-i-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.who-am-i-stat-number {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.who-am-i-stat-label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+}
