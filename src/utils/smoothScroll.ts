@@ -1,4 +1,4 @@
-export const smoothScroll = (sectionId: string, duration: number = 1500) => {
+export const smoothScroll = (sectionId: string, duration: number = 700) => {
   const element = sectionId === 'top' ? null : document.getElementById(sectionId);
   if (sectionId !== 'top' && !element) return;
 
