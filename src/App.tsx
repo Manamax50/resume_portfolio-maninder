@@ -6,8 +6,12 @@ import Footer from './components/Footer';
 import './App.css';
 
 function App() {
+  window.addEventListener("scroll", () => {
+  console.log("scroll event at", window.scrollY);
+});
   return (
     <>
+      
       <Navigation />
       <Hero />
       <WhoAmI />

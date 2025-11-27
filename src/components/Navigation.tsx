@@ -133,6 +133,7 @@ const Navigation: React.FC = () => {
           href="#projects"
           onClick={(e) => handleNavClick(e, 'projects')}
           className={`nav-mobile-link ${activeTab === 'projects' ? 'nav-mobile-link-active' : ''}`}
+          
         >
           Projects
         </a>

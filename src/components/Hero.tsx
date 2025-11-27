@@ -30,7 +30,10 @@ const Hero: React.FC = () => {
           <a href="#who-am-i" onClick={(e) => handleSmoothScroll(e, 'who-am-i')} className="hero-btn hero-btn-secondary">
             About Me
           </a>
-          <a href="#contact" onClick={(e) => handleSmoothScroll(e, 'contact')} className="hero-btn hero-btn-secondary">
+          <a href=""  onClick={ (e) => {e.preventDefault();
+            history.replaceState(null, "", "#contact"); // update hash without scrolling
+            handleSmoothScroll(e, 'contact');}} 
+            className="hero-btn hero-btn-secondary">
             Contact Me
           </a>
         </div>

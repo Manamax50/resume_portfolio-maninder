@@ -12,9 +12,11 @@
   flex-direction: column;
   min-height: 100vh;
   background-color: #0f172a;
-  overflow-y:none;
+  overflow-y:auto;
 }
 ::-webkit-scrollbar {
     display: none;
 }
-
+html {
+  scroll-behavior: auto !important;
+}
