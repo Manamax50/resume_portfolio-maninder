@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import type { Project } from '../types';
 import ProjectCard from './ProjectCard';
 import ProjectSidebar from './ProjectSidebar';
@@ -70,6 +70,11 @@ const PROJECTS_DATA: Project[] = [
 const Projects: React.FC = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
   const projectRefsArray = useRef<(HTMLDivElement | null)[]>([]);
+
+  // Ensure we start at the top when the page refreshes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleOpenProject = (index: number) => {
     setSelectedProjectIndex(index);
