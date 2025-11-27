@@ -41,8 +41,7 @@ const PROJECTS_DATA: Project[] = [
     features: [
       'AES-encrypted transactions',
       'HMAC message integrity checks',
-      'Thread-safe transaction engine',
-      'Fraud detection rule system'
+      'Hashed and salted passwords',
     ],
   },
 
@@ -50,13 +49,13 @@ const PROJECTS_DATA: Project[] = [
     id: 2,
     title: '3D Renderer',
     icon: 'fa-cube',
-    tags: ['Vue.js', 'GSAP', 'Mapbox'],
+    tags: ['Java', 'Swing', '3D Graphics'],
     demo: 'https://example.com/demo',
     code: 'https://github.com/Manamax50/3D-renderer-in-java',
     showDemo: false,
 
     // UPDATED description
-    desc: 'A custom-built Java 3D rendering engine implementing the full graphics pipeline manually — including matrix transforms, rasterization, barycentric interpolation, and depth buffering — all visualized through a real-time Swing window.',
+    desc: 'A custom-built Java 3D rendering engine implementing the full graphics pipeline manually, It includes matrix transforms, rasterization, barycentric interpolation, and depth buffering, all visualized through a real-time Swing window.',
 
     // UPDATED features
     features: [
