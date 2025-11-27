@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { smoothScroll } from '../utils/smoothScroll';
 import './Navigation.css';
 
 const Navigation: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'who-am-i' | 'projects' | 'contact'>('who-am-i');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,21 +54,36 @@ const Navigation: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isMobileMenuOpen]);
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setActiveTab(sectionId as 'who-am-i' | 'projects' | 'contact');
-    }
+    smoothScroll(sectionId);
+    setActiveTab(sectionId as 'who-am-i' | 'projects' | 'contact');
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    smoothScroll('top');
+    setActiveTab('who-am-i'); // keep first tab highlighted after returning to top
   };
 
   return (
     <nav className="nav-container">
       <div className="nav-inner">
         {/* Logo / Name */}
-        <a href="#" className="nav-logo">
-          Maninder<span className="nav-logo-accent">Arora</span>.
+        <a href="#" onClick={(e) => handleLogoClick(e)} className="nav-logo">
+          Maninder<span className="nav-logo-accent"> Arora</span>
         </a>
 
         {/* Desktop Tabs */}
@@ -98,9 +115,34 @@ const Navigation: React.FC = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="nav-mobile-btn">
-          <i className="fas fa-bars"></i>
+        <button className="nav-mobile-btn" onClick={() => setIsMobileMenuOpen((prev) => !prev)} aria-label="Toggle navigation">
+          <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
         </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className={`nav-mobile-menu ${isMobileMenuOpen ? 'nav-mobile-menu-open' : ''}`}>
+        <a
+          href="#who-am-i"
+          onClick={(e) => handleNavClick(e, 'who-am-i')}
+          className={`nav-mobile-link ${activeTab === 'who-am-i' ? 'nav-mobile-link-active' : ''}`}
+        >
+          Who Am I
+        </a>
+        <a
+          href="#projects"
+          onClick={(e) => handleNavClick(e, 'projects')}
+          className={`nav-mobile-link ${activeTab === 'projects' ? 'nav-mobile-link-active' : ''}`}
+        >
+          Projects
+        </a>
+        <a
+          href="#contact"
+          onClick={(e) => handleNavClick(e, 'contact')}
+          className={`nav-mobile-link ${activeTab === 'contact' ? 'nav-mobile-link-active' : ''}`}
+        >
+          Contact
+        </a>
       </div>
     </nav>
   );

@@ -39,12 +39,11 @@
 }
 
 .project-card-icon i {
-  font-size: 2rem;
+  font-size: 2.75rem; /* larger logo */
 }
 
 .project-card:hover .project-card-icon {
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  opacity: 1; /* keep logo visible on hover */
 }
 
 .project-card-content {

@@ -38,25 +38,25 @@ const ProjectSidebar: React.FC<ProjectSidebarProps> = ({ project, sourceElement,
         overlayRef.current.classList.add('sidebar-overlay-visible');
       }
 
-      // Step 2: Trigger slide-right animation
+      // Step 2: Trigger slide-right + width expansion animation
       requestAnimationFrame(() => {
         if (morpherRef.current) {
           morpherRef.current.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
-          morpherRef.current.style.left = `${window.innerWidth - rect.width - 20}px`;
+          morpherRef.current.style.left = `${finalLeft}px`;
+          morpherRef.current.style.width = `${sidebarWidth}px`;
         }
       });
 
-      // Step 3: Expand and darken (after slide completes)
+      // Step 3: Expand vertically (after slide+width completes)
       const expandTimeoutId = setTimeout(() => {
         if (morpherRef.current) {
           morpherRef.current.style.transition = 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
           morpherRef.current.style.top = '0px';
-          morpherRef.current.style.left = `${finalLeft}px`;
-          morpherRef.current.style.width = `${sidebarWidth}px`;
           morpherRef.current.style.height = '100%';
           morpherRef.current.style.borderRadius = '0px';
           morpherRef.current.style.backgroundColor = '#0f172a';
           morpherRef.current.style.borderColor = '#0f172a';
+          morpherRef.current.classList.add('sidebar-morpher-visible');
         }
 
         // Step 4: Show real panel and content (while expanding)
